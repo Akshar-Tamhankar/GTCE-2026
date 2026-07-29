@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- MATH 1554 Studio Worksheet: Quadratic Forms (LN 2.2, 2.3)              -->
+<!-- Converted from WS/WS07_22_23.tex                                       -->
+<!-- Each <page> corresponds to a \newpage in the original LaTeX.           -->
+<!--                                                                        -->
+<!-- Presentation notes:                                                    -->
+<!--  * <assemblage> is used for the Definition/Theorem boxes because it is  -->
+<!--    titled but UNNUMBERED, matching the original.  <definition> and     -->
+<!--    <theorem> would render as "Definition 1." etc.                      -->
+<!--  * The surface is a bare <image>, not wrapped in <figure>, so that no  -->
+<!--    "Figure N." caption is generated.                                   -->
+<worksheet xml:id="ws-quadratic-forms" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Quadratic Forms (LN 2.2, 2.3)</title>
+
+  <page>
+    <paragraphs>
+      <title>Poll Question</title>
+      <p>
+        True or false: <m>Q(x,y) = 8x^2 + 2y^2 - 8xy \gt 0</m> for all values
+        of <m>x</m> and <m>y</m>.
+      </p>
+      <p>
+        <em>Hint: plot it in Desmos 3D! And: how does this exercise relate to
+        symmetric matrices?</em>
+      </p>
+    </paragraphs>
+  </page>
+
+  <page>
+    <paragraphs>
+      <title>Expressing Quadratic Forms in Terms of Symmetric Matrices</title>
+
+      <assemblage xml:id="ws-qf-def-quadratic-form">
+        <title>Definition</title>
+        <p>
+          <ul>
+            <li>
+              <p>
+                A <term>quadratic form</term> is a function
+                <m>Q \;:\; \R^n \to \R</m>, given by
+                <md>
+                  Q(\vec x) = \vec x\,^T A \vec x =
+                  \begin{pmatrix} x_1 \amp x_2 \amp \cdots \amp x_n \end{pmatrix}
+                  \begin{pmatrix}
+                    a_{11} \amp a_{12} \amp \cdots \amp a_{1n} \\
+                    a_{12} \amp a_{22} \amp \cdots \amp a_{2n} \\
+                    \vdots \amp \vdots \amp \ddots \amp \vdots \\
+                    a_{1n} \amp a_{2n} \amp \cdots \amp a_{nn}
+                  \end{pmatrix}
+                  \begin{pmatrix} x_1 \\ x_2 \\ \vdots \\ x_n \end{pmatrix}
+                </md>
+              </p>
+            </li>
+            <li>
+              <p>
+                Matrix <m>A</m> is <m>n \times n</m> and symmetric, and
+                <m>\vec x</m> is a variable vector in <m>\R^n</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </assemblage>
+
+      <p>
+        Example: express
+        <m>Q = 3x_1^2 + x_2^2 + 8x_3^3 + 4x_1x_2 - 6x_2x_3</m>
+        in the form <m>Q = x^T A x</m>.
+      </p>
+    </paragraphs>
+  </page>
+
+  <page>
+    <paragraphs>
+      <title>The Principle Axes Theorem</title>
+
+      <assemblage xml:id="ws-qf-thm-principal-axes">
+        <title>Theorem</title>
+        <p>
+          <ul>
+            <li>
+              <p>
+                If <m>A</m> is a symmetric matrix then there exists an orthogonal
+                change of variable <m>\vec x = P \vec y</m> that transforms
+                <m>\vec x^{\,T} A \vec x</m> to <m>\vec y^{\,T} D \vec y</m>
+                with no cross-product terms.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </assemblage>
+
+      <p>
+        <em>Proof in the lecture videos/textbook.</em>
+      </p>
+    </paragraphs>
+
+    <paragraphs>
+      <title>Example</title>
+      <p>
+        Consider: <m>Q = x^2 + y^2 + 2kxy</m> where <m>k \in \R</m>.
+      </p>
+      <p>
+        <ol marker="a.">
+          <li>
+            <p workspace="2in">
+              Make a change of variable that transforms the quadratic form into
+              another quadratic form that has no cross-product terms.
+            </p>
+          </li>
+          <li>
+            <p workspace="2in">
+              For what values of <m>k</m> will <m>Q</m> satisfy <m>Q \ge 0</m>
+              for any <m>x</m> and <m>y</m>?
+            </p>
+          </li>
+        </ol>
+      </p>
+      <p>
+        <em>Tip: it may help to plot the surfaces in Desmos 3D to see what the
+        surface looks like as you change the value of <m>k</m>.</em>
+      </p>
+    </paragraphs>
+  </page>
+
+  <page>
+    <paragraphs>
+      <title>Classifying Quadratic Surfaces</title>
+
+      <p>
+        Our goal: <alert>solve optimization problems with quadratic
+        functions.</alert>
+      </p>
+
+      <p>
+        Take for example the surface:
+        <md>
+          Q = x^2 + y^2 = \vec x\,^T \begin{pmatrix} 1 \amp 0 \\ 0 \amp 1 \end{pmatrix} \vec x
+        </md>
+      </p>
+
+      <p>
+        If we set <m>Q</m> to be constant, <m>Q = k^2</m>, we obtain the
+        equation of a circle whose radius is <m>k^2</m>.
+        <md>
+          k^2 = x^2 + y^2
+        </md>
+      </p>
+
+      <image xml:id="ws-qf-img-paraboloid" width="60%">
+        <shortdescription>
+          A circular paraboloid opening upward with its vertex at the origin.
+        </shortdescription>
+        <description>
+          <p>
+            A three-dimensional plot of the surface <m>Q = x^2 + y^2</m>, drawn
+            over a circular disc and overlaid with a mesh. The surface is a
+            bowl-shaped circular paraboloid opening upward with a unique
+            minimum at the origin, shaded from dark at the vertex through
+            yellow and orange to red at the outer rim.
+          </p>
+        </description>
+        <latex-image>
+          \begin{tikzpicture}[scale=1]
+            \begin{axis}[
+              axis line style = very thick, smooth,
+              xmin=-4, ymin=-4, zmin=0, xmax=4, ymax=4, zmax=10,
+              axis lines=center,
+              xticklabels={,,}, yticklabels={,,}, zticklabels={,,},
+              xtick=\empty, ytick=\empty, ztick=\empty,
+              colormap={warm}{color=(yellow) color=(orange) color=(red)},
+            ]
+              \addplot3[
+                surf,
+                shader=faceted,
+                faceted color=black,
+                line width=0.2pt,
+                restrict z to domain=0:9,
+                data cs=polar,
+                domain=0:360,
+                y domain=0:3,
+                samples=25,
+              ] (x, y, y^2);
+            \end{axis}
+          \end{tikzpicture}
+        </latex-image>
+      </image>
+
+      <p>
+        The surface above has a unique minimum at the origin. What about other
+        surfaces?
+      </p>
+
+      <assemblage xml:id="ws-qf-def-definiteness">
+        <title>Definition</title>
+        <p>
+          A quadratic form <m>Q</m> is
+          <ul>
+            <li>
+              <p>
+                <term>positive definite</term> if <m>Q \gt 0</m> for all
+                <m>\vec x \ne \vec 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <term>negative definite</term> if <m>Q \lt 0</m> for all
+                <m>\vec x \ne \vec 0</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <term>positive semidefinite</term> if <m>Q \ge 0</m> for all
+                <m>\vec x</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <term>negative semidefinite</term> if <m>Q \le 0</m> for all
+                <m>\vec x</m>.
+              </p>
+            </li>
+            <li>
+              <p>
+                <term>indefinite</term> if <m>Q</m> takes on positive and
+                negative values for <m>\vec x \ne \vec 0</m>.
+              </p>
+            </li>
+          </ul>
+        </p>
+      </assemblage>
+
+      <assemblage xml:id="ws-qf-thm-eigenvalue-classification">
+        <title>Theorem</title>
+        <p>
+          If <m>A</m> is a symmetric matrix with eigenvalues <m>\lambda_i</m>,
+          then <m>Q = \vec x^{\,T} A \vec x</m> is
+          <ul>
+            <li>
+              <p>
+                <term>positive definite</term> when all eigenvalues are positive
+              </p>
+            </li>
+            <li>
+              <p>
+                <term>negative definite</term> when all eigenvalues are negative
+              </p>
+            </li>
+            <li>
+              <p>
+                <term>indefinite</term> when at least one eigenvalue is negative
+                and at least one eigenvalue is positive
+              </p>
+            </li>
+          </ul>
+        </p>
+      </assemblage>
+    </paragraphs>
+  </page>
+
+  <page>
+    <paragraphs>
+      <title>Example</title>
+      <p workspace="4in">
+        Assume <m>\vec x \in \R^3</m>. Construct the matrix of the quadratic
+        form, and classify the quadratic form.
+        <md>
+          Q = 4x_3^2 - 2x_1x_2
+        </md>
+      </p>
+    </paragraphs>
+  </page>
+
+</worksheet>

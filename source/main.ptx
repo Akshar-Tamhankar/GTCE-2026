@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- This is the main course file for ... . It is used to generate all the public facing course materials so those can be hosted online.  -->
+<!-- Main course file for MATH 1554.  Builds all public-facing course       -->
+<!-- materials.  Only content reachable from this file gets built.          -->
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
-  <!-- Include common macros etc: -->
+
+  <!-- Common macros, latex-image preamble, etc. -->
   <xi:include href="./docinfo.ptx" />
-  <!-- By creating a PreTeXt "book" for the course, we can split components into "chapters" -->
+
   <book>
-    <title>Course Name (change me)</title>
+    <title>MATH 1554 Linear Algebra</title>
+    <subtitle>Distance Math Studio Worksheets</subtitle>
 
-    <subtitle>MATH xxx Semester 20xx</subtitle>
-
-    <!-- Optional: include frontmatter with author info and date -->
     <xi:include href="./frontmatter.ptx" />
 
     <chapter xml:id="course-documents">
       <title>Course Documents</title>
 
-      <!-- Course syllabus -->
       <xi:include href="./syllabus/syllabus.ptx" />
-      <!-- Other documents could go here, like a schedule, project description, etc. -->
     </chapter>
 
     <chapter xml:id="course-notes">
@@ -27,16 +25,29 @@
       <introduction>
         <p>
           The following notes are intended to remind you what we covered each week.
-          They are not a substitute for attending class and not a substitute for reading the textbook.
+          They are not a substitute for attending class and not a substitute for
+          reading the textbook.
         </p>
       </introduction>
 
       <xi:include href="./notes/week01.ptx"/>
       <xi:include href="./notes/week02.ptx"/>
-      <!-- etc. -->
-
     </chapter>
 
+    <chapter xml:id="worksheets">
+      <title>Studio Worksheets</title>
+
+      <introduction>
+        <p>
+          These are the studio worksheets distributed during the semester. Work
+          through them yourself, and bring questions to office hours or the
+          course forums.
+        </p>
+      </introduction>
+
+      <!-- Add one xi:include per worksheet, in order. -->
+      <xi:include href="./wkst-24.ptx"/>
+    </chapter>
 
     <chapter xml:id="activities">
       <title>In-Class Activities</title>
@@ -47,27 +58,25 @@
         </p>
       </introduction>
 
-      <!-- Remove the example and replace with your own activities -->
       <xi:include href="./activities/01-intro-activity.ptx"/>
-
-      <!-- Add more xi:include files here to include them in the main course -->
     </chapter>
 
+    <!-- A <chapter> must contain real content: a chapter holding only a       -->
+    <!-- <title> fails schema validation.  Keep these commented out until      -->
+    <!-- there is something to include, then uncomment chapter and includes.   -->
+    <!--
     <chapter xml:id="handouts">
       <title>Handouts</title>
-      <!-- Include handouts -->
-      <!--<xi:include href="./handouts/handout-filename.ptx"/>-->
+      <xi:include href="./handouts/handout-template.ptx"/>
     </chapter>
+    -->
 
+    <!--
     <chapter xml:id="homework">
       <title>Homework</title>
-
-      <!-- Include homework files -->
-      <!--<xi:include href="./homework/homework01.ptx"/>-->
-
+      <xi:include href="./homework/homework-01.ptx"/>
     </chapter>
+    -->
 
-    <!-- Include additional chapters for other categories -->
-
-    </book>
-  </pretext>
+  </book>
+</pretext>
